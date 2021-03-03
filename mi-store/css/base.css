@@ -1,0 +1,27 @@
+/* 公共样式 */
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+body {
+  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei,
+    Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  color: #333;
+  background-color: #fff;
+  /* 保证窗口变窄时布局不会错换 */
+  min-width: 1226px;
+}
+
+/* 设置一个类表示中间容器的宽度 */
+.w {
+  width: 1226px;
+  margin: 0 auto;
+}
+
+a{
+  text-decoration: none;
+  color:#333;
+}
