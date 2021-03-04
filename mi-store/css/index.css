@@ -17,7 +17,6 @@
   float: right;
 }
 
-
 /* 设置超链接颜色 */
 .topbar a {
   font-size: 12px;
@@ -25,8 +24,8 @@
   display: block;
 }
 
-.topbar a:hover{
-  color:#fff;
+.topbar a:hover {
+  color: #fff;
 }
 
 .shopcart a {
@@ -47,7 +46,6 @@
   margin-right: 3px;
 }
 
-
 /* 设置中间分割线样式 */
 .topbar .line {
   color: #424242;
@@ -59,20 +57,20 @@ a {
   text-decoration: none;
   color: #333;
 }
-.app{
+.app {
   position: relative;
 }
 
 .app .qrcode {
   height: 148px;
   width: 124px;
-  left:-35px;
+  left: -35px;
   height: 0;
   overflow: hidden;
   line-height: 1;
   text-align: center;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: absolute;
   /* transition用于设置过度效果 */
   transition: height 0.3s;
@@ -80,32 +78,150 @@ a {
 /* 设置二维码图片 */
 .qrcode img {
   width: 90px;
-  margin:  17px;
+  margin: 17px;
   margin-bottom: 10px;
 }
 /* 设置二维码中文字 */
-.app .qrcode span{
+.app .qrcode span {
   color: black;
   font-size: 16px;
 }
 .app:hover .qrcode,
-.app:hover::after{
+.app:hover::after {
   display: block;
   height: 148px;
 }
 
-
-.app::after{
+.app::after {
   display: none;
   content: '';
   position: absolute;
   width: 0;
   height: 0;
-  border:8px solid transparent;
+  border: 8px solid transparent;
   border-top: none;
   border-bottom-color: #fff;
   bottom: 0;
   left: 0;
   right: 0;
-  margin:auto;
+  margin: auto;
+}
+.shopcart {
+  position: relative;
+}
+
+.shopcart .cartpanel {
+  width: 200px;
+  height: 0;
+  overflow: hidden;
+  line-height: 1;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: -80px;
+  /* transition用于设置过度效果 */
+  transition: height 0.3s;
+  z-index: -1;
+}
+
+.shopcart:hover .cartpanel,
+.shopcart:hover::after {
+  display: block;
+  height: 50px;
+}
+
+.shopcart .cartpanel span {
+  color: #333;
+}
+
+.head-wrapper {
+  position: relative;
+}
+
+/* 设置中间的header */
+.header {
+  height: 100px;
+}
+
+.header .logo {
+  float: left;
+  width: 56px;
+  height: 56px;
+  margin-top: 22.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 设置logo容器的样式 */
+.header .logo a {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  left: 0;
+  transition: left 0.3s;
+}
+/* 设置logo样式 */
+.header .logo .home {
+  position: absolute;
+  left: -55px;
+  width: 112px;
+  background-image: url('../images/mihome.png');
+}
+/* 设置logo hover 动画 */
+.header .logo:hover .home {
+  left: 0px;
+}
+
+/* 设置中间的导航条 */
+.header .nav-wrapper {
+  float: left;
+  margin-left: 7px;
+}
+
+.header .nav {
+  width: 850px;
+  line-height: 100px;
+  padding-left: 30px;
+}
+
+/* 设置导航条中li */
+.nav-wrapper li {
+  float: left;
+}
+
+.nav-wrapper li a {
+  display: block;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.nav-wrapper li a:hover {
+  color: #ff6700;
+}
+
+.all-goods {
+  /* display不会占据位置，visibility会占据位置 */
+  visibility: hidden;
+}
+
+.nav .goods-info {
+  z-index: 999;
+  height: 0;
+  background-color: pink;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  left: 0;
+  transition: all 0.3s;
+}
+/* ~表示选择后面所有的goods-info +表示选择后面的一个goods-info */
+.nav
+  li:not(:first-of-type):not(:nth-child(9)):not(:nth-child(10)):hover
+  ~ .goods-info,
+.goods-info:hover {
+  height: 228px;
+  border-top: 1px solid rgb(224, 224, 224);
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
 }
