@@ -1,0 +1,151 @@
+a {
+  text-decoration: none;
+  color: #fff;
+  &:hover {
+    color: rgb(196, 196, 196);
+  }
+}
+
+.top-bar-wrapper {
+  background-color: #000;
+}
+
+// 导航条容器
+.top-bar {
+  max-width: 1080px;
+  margin: 0 auto;
+  height: 48px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// 设置左侧按钮hover时展示的菜单
+.left-menu {
+  &:hover {
+    .nav {
+      display: block;
+    }
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    padding-top: 60px;
+    li {
+      width: 80%;
+      margin: 0 auto;
+      border-bottom: 1px solid #4e4e4e;
+      a {
+        display: block;
+        line-height: 44px;
+        font-size: 14px;
+      }
+      &:last-child a {
+        display: inline-block;
+        margin-right: 10px;
+      }
+      span {
+        color: #fff;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+// 设置左侧导航图标
+.left-menu {
+  // 图标
+  .menu-icon {
+    width: 18px;
+    height: 48px;
+    position: relative;
+    li {
+      width: 18px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      // 修改变形元点
+      transform-origin: left center;
+      transition: 0.5s;
+    }
+    li:nth-child(1) {
+      top: 18px;
+    }
+    li:nth-child(2) {
+      bottom: 23px;
+    }
+    li:nth-child(3) {
+      top: 30px;
+    }
+    // 鼠标移入时效果
+    &:hover {
+      .nav {
+        display: block;
+      }
+      li:nth-child(1) {
+        transform: rotateZ(40deg);
+      }
+      li:nth-child(2) {
+        // visibility: hidden;
+        opacity: 0;
+      }
+      li:nth-child(3) {
+        transform: rotateZ(-40deg);
+      }
+    }
+  }
+}
+
+// 设置logo样式
+.logo {
+  a {
+    text-indent: -9999px;
+    display: block;
+    width: 122px;
+    height: 32px;
+    background-image: url('../images/dff63979.sprites-index@2x.png');
+    background-size: 400px 400px;
+  }
+}
+
+@media only screen {
+  @media (min-width: 768px) {
+    .left-menu {
+      order: 2;
+      flex: auto;
+      .nav {
+        display: flex;
+        position: static;
+        padding: 0;
+        justify-content: space-around;
+        li {
+          width: auto;
+          border-bottom: none;
+          margin: 0;
+          a {
+            line-height: 48px;
+          }
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+    .menu-icon {
+      display: none;
+    }
+    .logo {
+      order: 1;
+      // 隐藏logo显示菜单
+    }
+    .user-info {
+      order: 3;
+    }
+  }
+}

@@ -190,6 +190,43 @@ a {
   float: left;
 }
 
+/* 设置左侧导航条样式 */
+.left-menu {
+  width: 234px;
+  height: 420px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  z-index: 999;
+  left: -93px;
+  line-height: 1;
+  padding: 20px 0;
+}
+
+ul .left-menu div a {
+  display: block;
+  height: 42px;
+  line-height: 42px;
+  color: white;
+  margin-right: 0;
+  padding: 0 30px;
+  font-size: 14px;
+}
+ul .left-menu div:hover {
+  color: white;
+  background-color: orange;
+}
+ul .left-menu div a:hover {
+  color: white;
+}
+.left-menu a i {
+  float: right;
+  line-height: 42px;
+}
+
+.all-goods-wrapper {
+  position: relative;
+}
+
 .nav-wrapper li a {
   display: block;
   font-size: 16px;
@@ -206,7 +243,7 @@ a {
 }
 
 .nav .goods-info {
-  z-index: 999;
+  z-index: 9999;
   height: 0;
   background-color: pink;
   overflow: hidden;
@@ -224,4 +261,132 @@ a {
   height: 228px;
   border-top: 1px solid rgb(224, 224, 224);
   box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 设置搜索框容器 */
+.search-wrapper {
+  width: 296px;
+  height: 50px;
+  background-color: red;
+  float: right;
+  margin-top: -70px;
+}
+.search-wrapper input,
+.search-wrapper .search-btn {
+  float: left;
+}
+.search-wrapper {
+  border: 1px solid rgb(224, 224, 224);
+}
+
+.search-wrapper .search-inp {
+  border: none;
+  padding: 0;
+  float: left;
+  height: 50px;
+  width: 244px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid rgb(224, 244, 244);
+}
+
+/* 设置input获取焦点后的样式 */
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + button {
+  outline: 1px solid orange;
+}
+
+.search-wrapper .search-btn {
+  float: left;
+  width: 52px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  color: #616161;
+  border-left: none;
+  font-size: 16px;
+}
+.search-wrapper .search-btn:hover {
+  background-color: orange;
+  color: white;
+  border: none;
+}
+/* 设置banner样式  */
+.banner {
+  position: relative;
+  height: 460px;
+}
+
+.banner .img-list li {
+  position: absolute;
+}
+
+.banner img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* 设置5个点 */
+.pointer {
+  position: absolute;
+  bottom: 22px;
+  right: 35px;
+}
+.pointer a {
+  float: left;
+  width: 8px;
+  height: 6px;
+  border: 2px rgba(255, 255, 255, 0.4) solid;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-left: 6px;
+}
+.pointer a:hover,
+.pointer a.active {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px rgba(0, 0, 0, 0.4) solid;
+}
+
+.prev-next a {
+  width: 41px;
+  height: 69px;
+  position: absolute;
+  background-image: url(../images/sprite/icon-slides.png);
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.prev-next .prev {
+  left: 234px;
+  background-position: -84px 0;
+}
+.prev-next .next {
+  right: 0;
+  background-position: -125px 0;
+}
+
+.prev-next .prev:hover {
+  background-position: 0 0;
+}
+
+.prev-next .next:hover {
+  background-position: -42px 0;
+}
+
+/* 设置回到顶部样式 */
+.to-top {
+  width: 26px;
+  height: 206px;
+  background-color: pink;
+  position: fixed;
+  bottom: 160px;
+  right: 50%;
+  /* 
+  布局恒等式 ：
+  left、 margin-left width margin-right  right;
+  auto + 0 + 26 + 0（变为-639因此auto增大） + 50%    =视口宽度
+  */
+  margin-right: -639px;
 }

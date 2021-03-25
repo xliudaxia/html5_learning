@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      ul {
+        width: 800px;
+        height: 800px;
+        border: 10px red solid;
+        display: flex;
+        /* 设置元素是否会沿着主轴方向自动换行
+         wrap  沿着辅轴方向换行
+         nowrap
+         wrap-reverse  
+         nowrap
+         flex-flow:wrap diraction 简写属性
+
+         justify-content: 如何分配主轴上得空白空间
+            flex-start
+            flex-end
+            center
+            space-round space-between space-space-evenly
+          align-item:元素在辅轴上对齐方式
+            stretch:将元素长度设为相同的值
+            flex-start：元素不会拉伸，沿着辅轴起点对齐
+            flex-end
+            center
+            baseline:基线对齐
+          align-content:辅轴空白的分布
+        */
+        flex-flow: wrap row;
+        align-items: flex-start;
+        align-content: flex-start;
+      }
+      li {
+        width: 200px;
+        background-color: #bfa;
+        font-size: 50px;
+        text-align: center;
+        line-height: 100px;
+        flex-shrink: 0;
+      }
+      li:nth-child(1) {
+        /* align-self:用来设置当前元素的aligin-item */
+        align-self: stretch;
+        background-color: pink;
+      }
+      li:nth-child(2) {
+        background-color: deepskyblue;
+      }
+      li:nth-child(3) {
+        background-color: orange;
+      }
+      li:nth-child(4) {
+        background-color: darkred;
+      }
+      li:nth-child(5) {
+        background-color: coral;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>
+        2
+        <div>2</div>
+      </li>
+      <li>
+        3
+        <div>3</div>
+        <div>3</div>
+      </li>
+      <li>
+        4
+        <div>4</div>
+        <div>4</div>
+      </li>
+      <li>
+        5
+        <div>5</div>
+        <div>5</div>
+      </li>
+    </ul>
+  </body>
+</html>
